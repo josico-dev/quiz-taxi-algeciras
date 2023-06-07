@@ -37,7 +37,7 @@ def get_question_by_id(db: Session, question_id: int):
 
 def create_question(db: Session, question: schemas.QuestionCreate):
     db_question = models.Question(
-        text=question.text, options=question.options, answer=question.answer
+        text=question.text, options=question.options, answer=question.answer, tag=question.tag
     )
     db.add(db_question)
     db.commit()

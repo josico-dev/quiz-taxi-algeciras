@@ -4,9 +4,10 @@ from typing import List, Optional, Union
 ## Question schemas
 
 class QuestionBase(BaseModel):
-    text: str = Field(..., unique=True)
+    text: str
     options: str
     answer: str
+    tag: str
 
 
 class QuestionCreate(QuestionBase):

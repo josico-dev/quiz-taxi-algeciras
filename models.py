@@ -8,9 +8,10 @@ class Question(Base):
     __tablename__ = "questions"
 
     id = Column(Integer, primary_key=True, index=True)
-    text = Column(String, unique=True, index=True)
+    text = Column(String)
     options = Column(String) # The options will be codified as a json string
     answer = Column(String)
+    tag = Column(String)
 
     responses = relationship("UserResponse", back_populates="question")
 
